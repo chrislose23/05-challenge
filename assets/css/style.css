@@ -15,28 +15,7 @@ body {
     cursor: grab;
   }
 
-  #taskForm {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #formTop {
-    padding: 10px;
-    display: flex;
-    justify-content: center
-  }
-
-  #formBottom {
-    padding: 10px;
+  .modal-footer {
     display: flex;
     justify-content: center;
-  }
-
-  .formInput {
-    margin: 10px;
-  }
-
-  textarea {
-    height: 100px;
-    width: 300px;
   }

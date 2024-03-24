@@ -13,6 +13,7 @@ function createTaskCard(task) {
         <div id="task-${task.id}" class="task-card card bg-light mb-3" draggable="true">
             <div class="card-body">
                 <h5 class="card-title">${task.name}</h5>
+                <p class="card-date">${task.date}</p>
                 <p class="card-text">${task.description}</p>
                 <button class="btn btn-danger delete-btn" data-task-id="${task.id}"><i class="fas fa-trash"></i></button>
             </div>
@@ -44,12 +45,14 @@ function handleAddTask(event) {
     event.preventDefault();
 
     let taskName = $("#taskName").val();
+    let dueDate = $("#dueDate").val();
     let taskDescription = $("#taskDescription").val();
 
-    if (taskName && taskDescription) {
+    if (taskName && dueDate && taskDescription) {
         let newTask = {
             id: generateTaskId(),
             name: taskName,
+            date: dueDate,
             description: taskDescription,
             status: "todo"
         };

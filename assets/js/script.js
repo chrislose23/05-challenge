@@ -70,5 +70,15 @@ $(document).ready(function () {
 
     renderTaskList();
 
-    
+    $('#taskForm').submit(handleAddTask);
+
+    $(document).on('click', 'delete-btn', handleDeleteTask);
+
+    $('.lane').droppable({
+        accept: '.task-card',
+        drop: handleDrop
+    });
+
+    $('#dueDate').datepicker();
+
 });

@@ -4,11 +4,21 @@ let nextId = JSON.parse(localStorage.getItem("nextId"));
 
 // Todo: create a function to generate a unique task id
 function generateTaskId() {
-
+    return nextId++;
 }
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {
+    let card = 
+        <div id="task-${task.id}" class="task-card card bg-light mb-3" draggable="true">
+            <div class="card-body">
+                <h5 class="card-title">${task.name}</h5>
+                <p class="card-text">${task.description}</p>
+                <button class="btn btn-danger delete-btn" data-task-id="${task.id}"><i class="fas fa-trash"></i></button>
+            </div>
+        </div>
+    ;
+    return card;
 
 }
 
@@ -58,4 +68,7 @@ function handleDrop(event, ui) {
 // Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
 $(document).ready(function () {
 
+    renderTaskList();
+
+    
 });

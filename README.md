@@ -12,6 +12,10 @@ I also used day.js to alter the colors of the task card to show inportance for t
 
 The tasks render on reload as long as the local storage is not cleared.
 
+GitHub Repo Link: https://github.com/chrislose23/05-challenge
+
+Deployed App Link: https://chrislose23.github.io/05-challenge/
+
 
 ## Usage
 

@@ -86,7 +86,37 @@ function handleDrop(event, ui) {
     taskList[taskIndex].status = newStatus;
     localStorage.setItem("tasks", JSON.stringify(taskList));
     renderTaskList();
+
 }
+
+
+// Function to update task card colors based on due date
+function updateTaskCardColors() {
+    let today = dayjs();
+    let dueDates = document.getElementsByClassName('card-date');
+    
+    for (var i = 0; i < dueDates.length; i++) {
+        let dueDate = dayjs(dueDates[i].textContent);
+        let daysRemaining = dueDate.diff(today, 'day');
+        let card = dueDates[i].closest('.task-card');
+        
+        if (daysRemaining < 0) {
+            card.classList.remove('bg-light', 'bg-warning');
+            card.classList.add('bg-danger');
+        } else if (daysRemaining <= 7) {
+            card.classList.remove('bg-light');
+            card.classList.add('bg-warning');
+        } else {
+            card.classList.remove('bg-warning', 'bg-danger');
+            card.classList.add('bg-light');
+        }
+    }
+}
+
+// Update task card colors
+updateTaskCardColors();
+setInterval(updateTaskCardColors, 60);
+
 
 // When the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
 $(document).ready(function () {

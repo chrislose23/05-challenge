@@ -19,3 +19,15 @@ body {
     display: flex;
     justify-content: center;
   }
+
+  .green {
+    background-color: lightgreen; 
+  }
+  
+  .yellow {
+    background-color: yellow; 
+  }
+  
+  .red {
+    background-color: lightcoral; 
+  }

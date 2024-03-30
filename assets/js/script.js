@@ -1,5 +1,6 @@
 // Retrieve tasks and nextId from localStorage
-let taskList = JSON.parse(localStorage.getItem("tasks"));
+// Added an empty array so the error on inital page load goes away
+let taskList = JSON.parse(localStorage.getItem("tasks")) || [];
 let nextId = JSON.parse(localStorage.getItem("nextId"));
 
 // Function to generate a unique task id
